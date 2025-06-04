@@ -8,4 +8,5 @@ function strSize(str){
 
 
 let str = "Hello World!";
+console.log(str.length);
 console.log(strSize(str));
