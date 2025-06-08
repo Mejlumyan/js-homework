@@ -12,3 +12,28 @@ console.log(result);
 
 console.log(getSum(a,b,));
 */
+
+
+// 
+
+// function accept(a,b,c){
+// 	if (a + b ===c) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
+// let a = 5;
+// let b = 6;
+// let c = 11;
+// console.log(accept(a,b,c));
+
+// function accept(a,b,c) {
+// 	if(c - (a+b) <= Number.EPSILON) return true;
+// 	return false;
+// }
+
+// let a = 0.1;
+// let b = 0.2;
+// let c = 0.3;
+//  console.log(accept(a,b,c));

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Toggle</title>
+  <style>
+    #toggleBtn {
+        cursor: pointer
+    }
+  </style>
+</head>
+<body>
+
+  <p id="text">Some text what i must hide or see after click</p>
+  <button id="toggleBtn">Toggle Visibility</button>
+
+  <script>
+    const p = document.getElementById("text");
+    const btn = document.getElementById("toggleBtn");
+    
+    btn.addEventListener("click", () => {
+        if(p.style.display === "none"){
+            p.style.display = "block"
+        }else {
+            p.style.display = "none"
+        }
+    })
+ </script>
+
+</body>
+</html>

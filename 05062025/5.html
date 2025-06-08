@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #btn {
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+    <p id="btn"> Hello World</p>
+
+    <script>
+           const change = document.getElementById("btn");
+
+               change.addEventListener("click", () => {
+                if(change.textContent === "Hello World"){
+                    change.textContent = "Hello JavaScript"
+                }else{
+                    change.textContent ="Hello World";
+                }
+               })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Document</title>
+  <style>
+    #timer {
+      font-size: 2rem;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    #startBtn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="startBtn">Start</button>
+  <div id="timer">10</div>
+
+  <script>
+    const startBtn = document.getElementById("startBtn")
+    const timerDisplay = document.getElementById("timer")
+
+    let countdownInterval = null;
+    let timeLeft = 10;
+
+    function resetTimer() {
+      clearInterval(countdownInterval)
+      countdownInterval = null
+      timeLeft = 10
+      timerDisplay.textContent = timeLeft
+      startBtn.disabled = false
+      startBtn.textContent = "Start"
+    }
+
+    function startCountdown() {
+      if (countdownInterval) return;
+
+      startBtn.disabled = true;
+      startBtn.textContent = "Counting down";
+
+      countdownInterval = setInterval(() => {
+        timeLeft--;
+        timerDisplay.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+          resetTimer()
+          alert("Time's up!")
+        }
+      }, 1000)
+    }
+
+    startBtn.addEventListener("click", startCountdown)
+  </script>
+
+</body>
+</html>

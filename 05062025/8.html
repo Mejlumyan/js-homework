@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Random Bg color</title>
+  <style>
+    #boxColor {
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div id="boxColor">Change color</div>
+
+  <script>
+    const box = document.getElementById("boxColor")
+
+    function getRandomColor() {
+      
+      const r = Math.floor(Math.random() * 256)
+      const g = Math.floor(Math.random() * 256)
+      const b = Math.floor(Math.random() * 256)
+      return `rgb(${r}, ${g}, ${b})`
+    }
+
+    box.addEventListener("click", () => {
+      box.style.backgroundColor = getRandomColor()
+    })
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+// Write a short essay explaining what hoisting is in JavaScript. Use examples to illustrate your explanation.
+Take a hoisted code snippet with var and modify it to use let and const, explaining the changes in behavior.
+
+
+JavaScript-ում hoisting-ը  մեխանիզմն է, որի արդյունքում փոփոխականների և ֆունկցիաների
+հայտարարությունները ավտոմատ կերպով տեղափոխվում են իրենց տեսանելիության scope-ի վերև՝ 
+մինչև կոդի կատարումը սկսելը։ Սա նշանակում է, որ որոշ փոփոխականներ կամ ֆունկցիաներ կարելի է օգտագործել 
+նույնիսկ այն հատվածում, որտեղ դրանք տեխնիկապես դեռ չեն հայտարարվել կոդում։
+------------
+Օրինակ՝ 
+
+console.log(a) // undefined
+var a = 5
+հայտաարարել եմ var-ով փոփոխական: Այստեղ հոիսթինգի ժամանակ այս կոդը JS-ը կտեսնի հետևյալ կերպ։
+
+var a;
+console.log(a) // undefined
+a = 5։
+Այսինքն հոիսթինգի ժամանակ փոփոխականը իր հայտարարմամբ բարցրանում է իր Սքոփի վերև, բայց առաանց արժեքը։ 
+Դա error տա, բայց undefined է։
+--------------------------------------------------------
+let,const այլ կերպ է աշխատում. 
+
+console.log(y) // ReferenceError
+let y = 10
+ Այս դեպքում ստանում ենք error;
+
+ hoisting նորմալ աշխատում է function declaration- ի դեպքում.
+
+ sayHi() // "Hi!"
+
+function sayHi() {
+  console.log("Hi!")
+}
+
+// Function expression doesn't work 
+sayHello() // TypeError: sayHello is not a function
+
+var sayHello = function () {
+  console.log("Hello!")
+}
+
+let և const-ով փոփոխականները բարձրացվում են scope-ի վերևի մաս, բայց հասանելի են միայն
+հայտարարելուց  հետո, ուստի նման օրինակներում կտա ReferenceError;
+
+console.log(b) // ReferenceError
+let b = 5
+
+
+
+
+
+
+
