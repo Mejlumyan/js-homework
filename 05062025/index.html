@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id = 'inputField' placeholder="Enter smth">
+    <div id = 'display'> </div>
+
+    <script>
+        const inputField = document.getElementById("inputField");
+        const display = document.getElementById("display");
+
+        inputField.addEventListener("input", function(){
+            display.textContent = inputField.value;
+        })
+    </script>
+</body>
+</html> -->
+
+
+<!--  
+-------------------------------------------------------------------------------
+7   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="text"> This is some text for toggle it</p>
+    <button id ="btn"> Toggle button</button>
+
+    <script>
+        const p = document.getElementById("text");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            if(p.style.display === "none"){
+                p.style.display = "block";
+            }else{
+                p.style.display = "none";
+            }
+        })
+    </script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = 'btn'>Start</button>
+    <div id="timer"> 10 </div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const timer = document.getElementById('timer');
+
+        let countdownInterval = null;
+        let timeLeft = 10;
+
+        function reset(){
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+            timeLeft = 10;
+            btn.disabled = false;
+            btn.textContent = "Start";
+        }
+
+        function startCountdown(){
+            if(countdownInterval) return;
+            btn.textContent = "Counting started";
+            btn.disabled = true;
+
+        countdownInterval = setInterval(() => {
+            timeLeft--;
+            timer.textContent = timeLeft;
+
+            if(timeLeft <= 0){
+                reset();
+                alert('hasanq 0');
+            }
+        },1000);
+        }
+
+        btn.addEventListener('click',startCountdown);
+    </script>
+</body>
+</html>
